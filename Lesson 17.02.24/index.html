@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging Example</title>
+</head>
+<body>
+
+<h1>Debugging Example</h1>
+
+<button onclick="factorial(6)">Add Numbers</button>
+
+<div id="result"></div>
+
+<script>
+   function factorial(n) {
+    // Add a breakpoint on the line below
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    
+    // Output the result to the console
+    console.log("The factorial of " + n + " is: " + result);
+
+    // Display the result in the HTML
+    document.getElementById("result").innerText = "The factorial of " + n + " is: " + result;
+}
+
+</script>
+
+
+</body>
+</html>
