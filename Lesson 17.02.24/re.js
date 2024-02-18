@@ -46,13 +46,13 @@ var pattern = /g[eo]t/
 // console.log(pattern.test("i want got"))
 
 // practise
- var pattern = /kn.w$/
+var pattern = /kn.w$/
 //  console.log(pattern.test("I want to know")) //true
- var pattern = /^kn.w$/
+var pattern = /^kn.w$/
 //  console.log(pattern.test("knew")) //true
- var pattern = /^kn[oe]w/
+var pattern = /^kn[oe]w/
 //  console.log(pattern.test("i want to knew")) //false
- var pattern = /know/
+var pattern = /know/
 //  console.log(pattern.test("i want to know")) //true
 
 
@@ -160,7 +160,7 @@ var ssnPattern = /^[0-9]{6}-[0-9]{3}[A-Z]{1}$/
 var creditCard = /^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/
 // console.log(creditCard.test("3334-4445-4456-5678"))
 
-var email= /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+.[a-zA-Z]{2,}$/
+var email = /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+.[a-zA-Z]{2,}$/
 // console.log(email.test("123_afda@gmail.com"))
 
 
@@ -184,19 +184,19 @@ var email= /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+.[a-zA-Z]{2,}$/
 // We can also replace found patterns with different texts.
 // We use replace() method to do it.
 
-var string = "test test sentence";
-var reg = /test/g;
-var replacement = "changed";
+// var string = "test test sentence";
+// var reg = /test/g;
+// var replacement = "changed";
 
 //a changed sentence
 // console.log(string.replace(reg, replacement));
 
 // or
 
-const regexp = /John/ig;
-const str = `Hi John , I was trying to call regarding work. john did not anwer`;
+// const regexp = /John/ig;
+// const str = `Hi John , I was trying to call regarding work. john did not anwer`;
 
-const item = str.replace(regexp,"James");
+// const item = str.replace(regexp,"James");
 // console.log(item)
 
 
@@ -205,4 +205,59 @@ const item = str.replace(regexp,"James");
 var email = /^[\w-.]+@[\w-.]+\.[a-z]+$/
 // /\w+/ equals to /[a-zA-Z0-9_]+/ 
 
-console.log(email.test("afafaf.@afokosf.com"))
+// console.log(email.test("afafaf.@afokosf.com"))
+
+
+// Practise Exercise
+// Write a function that will accept a string and return a valid postal code extracted from it (or an information that no postal code has been found).
+// Let's assume that a postal code consists of:
+// two letters,
+// five digits,
+// optional dash after the two first digits.
+
+// function extractPostcode(str) {
+
+//     var postalCodePattern = /[A-Za-z]{2}\d{2}-?\d{3}/;
+//     var match = str.match(postalCodePattern)
+
+//     if (match) {
+//         return match[0];
+//     } else {
+//         return ("No postal code found")
+//     }
+
+// }
+
+// console.log(extractPostcode("My postal address is AL23345"))
+
+// Practise question
+// Create a function that will find all words shorter than 4 letters in a given text.
+// Modify your function so that it removes all the found words from the text.
+// ??? hint "hint" Use \b in your pattern. It means the beginning or ending of a word.
+
+function removeWord(str){
+    var textPattern = /\b[a-zA-Z]{1,3}\b/g
+    var match = str.match(textPattern)
+    var regEXP = /\b[a-zA-Z]{1,3}\b/g
+    if (match){
+        return str.replace(regEXP,"")
+    }
+}
+console.log(removeWord("aaa aaaaa aa aaaaa aa a aaaa aa"))
+
+// or
+
+// function findWords(text){
+//     let pattern = /\b\w{1,3}\b/g
+//     return text.match(pattern)
+// }
+
+// function removeWords(text){
+//     let pattern = /\b\w{1,3}\b/g
+//     return text.replace(pattern, "")
+// }
+
+// let string = "This is a string for testing"
+
+// console.log(findWords(string))
+// console.log(removeWords(string))
