@@ -1,0 +1,33 @@
+<!-- Exercise #1
+from the example , Print the list of all the names either using console.log or alert . Give the best solution which scalable -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Example</title>
+</head>
+<body>
+
+<div id="id1">John smith</div>
+<div id="id2">Jane Doe</div>
+<div id="id3">Dom</div>
+<div id="id4">Harry</div>
+<script>
+var tabs = document.querySelectorAll('div')
+for (i=0; i<tabs.length; i++){
+    //solution 1
+console.log(tabs[i].innerText)} //O(n)
+
+//solution 2
+console.log(tabs[1].innerText) //O(1)
+console.log(tabs[2].innerText)
+console.log(tabs[3].innerText)
+console.log(tabs[4].innerText)
+
+</script>
+
+
+</body>
+</html>
